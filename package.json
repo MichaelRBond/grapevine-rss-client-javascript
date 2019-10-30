@@ -1,0 +1,65 @@
+{
+  "name": "grapevine-rss-client-javascript",
+  "version": "0.0.4",
+  "description": "Javascript / Typescript client for Grapevine RSS Aggregator",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Michael Bond <software@the-forgotten.org>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelRBond/grapevine-rss-client-javascript.git"
+  },
+  "keywords": [
+    "grapevine",
+    "rss",
+    "typescript"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "lint": "eslint -c ./.eslintrc src/*.ts src/**/*.ts",
+    "start": "webpack-serve ./webpack.config.js --port 8001 --host 0.0.0.0",
+    "test": "CONFIG_ENV=test jest --coverage --no-cache",
+    "verify": "yarn lint && yarn test && yarn run build"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "moment-timezone": "^0.5.27"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.19",
+    "@types/moment-timezone": "^0.5.12",
+    "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "eslint": "^6.5.1",
+    "jest": "^24.9.0",
+    "typescript": "^3.6.4"
+  },
+  "jest": {
+    "coverageDirectory": ".build/coverage/remapped",
+    "transform": {
+      ".(ts)": "ts-jest"
+    },
+    "testRegex": ".*\\.test.ts$",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/test/",
+      "<rootDir>/src/config/"
+    ],
+    "moduleDirectories": [
+      "<rootDir>/node_modules",
+      "<rootDir>/src/"
+    ],
+    "coverageReporters": [
+      "json"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "tsx"
+    ],
+    "testEnvironment": "node"
+  }
+}
