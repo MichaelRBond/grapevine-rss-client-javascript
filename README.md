@@ -16,4 +16,4 @@ const items = await this.props.grapevine.getItemsForFeed(1, [RssItemFlags.unread
 
 For a complete implementation see the [Grapevine RSS Reader](https://github.com/MichaelRBond/Grapevine-Rss-Reader)
 
-For api/types see the [type definition]()
+For api/types see the [type definition](https://github.com/MichaelRBond/grapevine-rss-client-javascript/blob/master/dist/index.d.ts)
